@@ -1,0 +1,42 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  id       Int    @id @default(autoincrement())
+  fullname String @db.VarChar(32)
+  email    String @unique @db.VarChar(32)
+  password String @db.VarChar(64)
+}
+
+model platforms {
+  id Int     @id @default(autoincrement())
+  name         String  @db.VarChar(32)
+  games        games[]
+}
+
+model categories {
+  id Int     @id @default(autoincrement())
+  name          String  @db.VarChar(32)
+  games         games[]
+}
+
+model games {
+  id           Int        @id @default(autoincrement())
+  title        String     @db.VarChar(32)
+  platformId   Int
+  categoriesId Int
+  cover        String     @db.VarChar(64)
+  year         Int
+  category     categories @relation(fields: [categoriesId], references: [id])
+  platform     platforms  @relation(fields: [platformId], references: [id])
+
+  @@index([categoriesId], map: "games_categoriesId_fkey")
+  @@index([platformId], map: "games_platformId_fkey")
+}

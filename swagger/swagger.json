@@ -1,0 +1,204 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API NintenGames",
+    "version": "1.0.0",
+    "description": "Documentación de la API de NintenGames"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api"
+    }
+  ],
+  "paths": {
+    "/categories": {
+      "get": {
+        "summary": "Obtener todas las categorías",
+        "tags": ["Categories"],
+        "responses": {
+          "200": { "description": "Lista de categorías" }
+        }
+      },
+      "post": {
+        "summary": "Crear nueva categoría",
+        "tags": ["Categories"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "type": "object", "properties": { "name": { "type": "string" } } }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Categoría creada exitosamente" }
+        }
+      }
+    },
+    "/games": {
+      "get": {
+        "summary": "Obtener todos los juegos",
+        "tags": ["Games"],
+        "responses": {
+          "200": { "description": "Lista de juegos" }
+        }
+      },
+      "post": {
+        "summary": "Crear un nuevo juego con imagen",
+        "tags": ["Games"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": { "type": "string", "format": "binary" },
+                  "title": { "type": "string" },
+                  "platformId": { "type": "integer" },
+                  "categoriesId": { "type": "integer" },
+                  "year": { "type": "integer" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Juego creado exitosamente" }
+        }
+      }
+    },
+    "/games/{id}": {
+      "get": {
+        "summary": "Obtener un juego por ID",
+        "tags": ["Games"],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }
+        ],
+        "responses": {
+          "200": { "description": "Juego encontrado" },
+          "404": { "description": "Juego no encontrado" }
+        }
+      },
+      "put": {
+        "summary": "Actualizar un juego por ID",
+        "tags": ["Games"],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": { "type": "string" },
+                  "platformId": { "type": "integer" },
+                  "categoriesId": { "type": "integer" },
+                  "cover": { "type": "string" },
+                  "year": { "type": "integer" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Juego actualizado" },
+          "404": { "description": "Juego no encontrado" }
+        }
+      },
+      "delete": {
+        "summary": "Eliminar un juego por ID",
+        "tags": ["Games"],
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }
+        ],
+        "responses": {
+          "200": { "description": "Juego eliminado" },
+          "404": { "description": "Juego no encontrado" }
+        }
+      }
+    },
+    "/platforms": {
+      "get": {
+        "summary": "Obtener todas las plataformas",
+        "tags": ["Platforms"],
+        "responses": {
+          "200": { "description": "Lista de plataformas" }
+        }
+      },
+      "post": {
+        "summary": "Crear nueva plataforma",
+        "tags": ["Platforms"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "type": "object", "properties": { "name": { "type": "string" } } }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Plataforma creada exitosamente" }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "summary": "Obtener todos los usuarios",
+        "tags": ["Users"],
+        "responses": {
+          "200": { "description": "Lista de usuarios" }
+        }
+      },
+      "post": {
+        "summary": "Crear nuevo usuario",
+        "tags": ["Users"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "fullname": { "type": "string" },
+                  "email": { "type": "string" },
+                  "password": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Usuario creado exitosamente" }
+        }
+      }
+    },
+    "/users/login": {
+      "post": {
+        "summary": "Iniciar sesión de usuario",
+        "tags": ["Users"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": { "type": "string" },
+                  "password": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Inicio de sesión exitoso" },
+          "401": { "description": "Contraseña incorrecta" },
+          "404": { "description": "Usuario no encontrado" }
+        }
+      }
+    }
+  }
+}
