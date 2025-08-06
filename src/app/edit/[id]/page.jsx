@@ -87,7 +87,7 @@ export default function Edit() {
   return (
     <ProtectedRoute>
       <div className="main">
-        <Header title="Adicionar VideoJuego" back={true} />
+        <Header title="Modificar VideoJuego" back={true} />
         {game &&
         <>
           <img
