@@ -22,6 +22,7 @@ export default function Game({ index, id, title, platform, cover, deleteAction }
           height: "75px",
           objectFit: "cover",
           marginLeft: "10px",
+          borderRadius: "50%"
         }}
         src={"/uploads/" + cover}
         alt={title}

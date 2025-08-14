@@ -37,6 +37,8 @@ export default function Game() {
             objectFit: "cover",
             display: "block",
             margin: "0 auto",
+            borderRadius: "50%"
+            
           }}
           src={game ? `/uploads/${game.cover}` : "/images/photo-lg-0.svg"}
           alt="Cover"

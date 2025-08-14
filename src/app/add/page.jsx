@@ -41,6 +41,15 @@ export default function Add() {
     const [platform, setPlatform] = useState('');
     const [category, setCategory] = useState('');
     const [year, setYear] = useState('');
+    const [preview, setPreview] = useState('/images/photo-lg-0.svg');
+
+    useEffect(() => {
+        return () => {
+            if (preview !== '/images/photo-lg-0.svg') {
+                URL.revokeObjectURL(preview);
+            }
+        };
+    }, [preview]);
 
     async function handleSubmit(e){
         e.preventDefault();
@@ -61,6 +70,17 @@ export default function Add() {
         console.log(json);
         redirect("/dashboard");
     }
+
+    function handleFileChange(e) {
+        const selectedFile = e.target.files[0];
+        if (selectedFile) {
+            if (preview !== '/images/photo-lg-0.svg') {
+                URL.revokeObjectURL(preview);
+            }
+            setPreview(URL.createObjectURL(selectedFile));
+            setFile(selectedFile);
+        }
+    }
     
   return (
     <ProtectedRoute>
@@ -73,8 +93,9 @@ export default function Add() {
             objectFit: "cover",
             display: "block",
             margin: "0 auto",
+            borderRadius: "50%"
           }}
-          src={"/images/photo-lg-0.svg"}
+          src={preview}
           alt={"image"}
         />
         <form onSubmit={handleSubmit}>
@@ -96,7 +117,7 @@ export default function Add() {
           </select>
 
             <div>
-                <input onChange={(e) => setFile(e.target.files[0])} type="file" id="fileInput" accept="image/png, image/jpeg, image/jpg, image/svg+xml" />
+                <input onChange={handleFileChange} type="file" id="fileInput" accept="image/png, image/jpeg, image/jpg, image/svg+xml" />
                 <label htmlFor="fileInput" className="file-label">Subir Portada</label>
             </div>
 

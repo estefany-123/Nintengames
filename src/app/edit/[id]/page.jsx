@@ -97,6 +97,7 @@ export default function Edit() {
               objectFit: "cover",
               display: "block",
               margin: "0 auto",
+              borderRadius: "50%"
             }}
             src={"/uploads/" + game.cover}
             alt={"image"}
