@@ -23,6 +23,7 @@ export async function GET(request) {
       },
       cover: true,
       year: true,
+      version:true,
     }
   });
 
@@ -48,6 +49,7 @@ export async function POST(request) {
   const platformId = Number(formData.get("platformId"));
   const categoriesId = Number(formData.get("categoriesId"));
   const year = Number(formData.get("year"));
+  const version = formData.get("version")?.toString() || "";
 
   const games = await prisma.games.create({
     data: {
@@ -55,6 +57,7 @@ export async function POST(request) {
       platformId,
       categoriesId,
       year,
+      version,
       cover: file.name,
     },
   });

@@ -5,6 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .main {
@@ -14,6 +15,10 @@ body {
     height: 785px;
     position: relative;
     overflow: hidden;
+}
+
+.container{
+    margin-top: -20px;
 }
 
 button {

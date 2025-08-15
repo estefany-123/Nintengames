@@ -5,15 +5,22 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #be8286;
+    
+
 }
 
 .main {
-    background-image: url("/images/bg.svg");
+     background-image: url("/images/bg.svg");
     background-size: cover;
     width: 400px;
     height: 785px;
     position: relative;
     overflow: hidden;
+
+}
+.container {
+    margin-top: -40px;
 }
 
 button {
@@ -34,7 +41,7 @@ input, select, .file-label {
     background-color: rgba(255,255,255,.6);
     display: block;
     margin: 20px auto;
-    padding: 15px;
+    padding: 20px;
     border: 0;
     color: #8a4b4f;
     font-family: "Montserrat-Regular";

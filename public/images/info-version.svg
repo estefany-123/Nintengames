@@ -1,0 +1,15 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 50" width="360" height="50">
+	<title>info-year</title>
+	<defs>
+		<image  width="62" height="13" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD4AAAANCAMAAADG8S11AAAAAXNSR0IB2cksfwAAAeZQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////GSMnDwAAAKJ0Uk5TAJmyCU///hNZ8wgRRefADQXuYqufa4kGdJSas/ZDMLWlZ36AJXm0aqevbX8bMpOqgw8nokutQPlR6QFVxfuc/Lb00uHa0Qc3WNbw4x39z/HDaDtUoxDrPRrvNOxSPPULR6iM2MyLA/IpXdQ6cBVe5EjQhQK/sDO9P9xGm3MtTNkxzR8iepjtFhRlWiD6ubvLpFZ45mNJxsig+G8jFyg1KjYrmEC3IAAAAk5JREFUeJxjZCAMGBkZ/+KSYgFK/gQyOP6yMH7DqoT7FwP7FxDNxMj4EV27AOMX3ndAhvAn/jc4rBBlZHwJpCQYv3/AsJ1B6rXYUwYGcdaXEo/lfrMxMt4HiioBncR4i1kFSN78y6D9g/MKgy7jD05GxvMgOf4frCyMZxjYJcRuMzKYnTc685fB4qwJI+OfS8aMJywPMTDYH7M+anPI/rAd40EHxl1s/512enw94cK4241xC4PvDk9Gxq0MPuutTzH4MjJY/T/jt5YhZKOgPeP6oJURjGtClwGVhDEuj1oRucn/15roBUDtB5j+8L4TZ3kVMx9otOfBj0mL4+ayx+7+yMjAkLpA+kEa47xkxjmp0xgYNO7GzmNg+++zniF7loc842SgV4Da1adnTWRgCNrM8O+v/bHMSUA5o5MQvzPIPfcS55qa0180GRIcwKBg+294iqGYEaijgLELpF17clEnA0PoBgaNy747ijsYolYzmB6DaGeo7Cll7CpvqemMvwTS7t4M0rCTgaGY+7lUm5VjA5Bn2llTz8DQ1MxQVwuWA2rP64Vqb2lsYGxorKzqZmH6ytDa6boWot3kveUSK/eW3D4gT2CdlWcFQ2eNyXEGhPZAyzKQ9u6q9sqOYgaGvvKuI7aljYyVECUTSyK/2jMWZU4C8cr7utY4Hj3Sn4PQrlTAUAHSzjAtnyFlOgMDv9oFBoZJ97sYoI6fkQuU+1vYC+JxSwPTwxTGNAaE9ifrGKYxoiSiOauPfEXizp3J4NUA43SIMS7fhaJ6AWM8AG4M2Jh1/d1BAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+		.s0 { opacity: .4;fill: #ffffff } 
+		.s1 { opacity: .6;fill: #ffffff } 
+	</style>
+	<path fill-rule="evenodd" class="s0" d="m2.9 2.9c-2.9 3-2.9 7.7-2.9 17.1v10c0 9.4 0 14.1 2.9 17.1 3 2.9 7.7 2.9 17.1 2.9h100v-50h-100c-9.4 0-14.1 0-17.1 2.9z"/>
+	<path fill-rule="evenodd" class="s1" d="m120 50h220c9.4 0 14.1 0 17.1-2.9 2.9-3 2.9-7.7 2.9-17.1v-10c0-9.4 0-14.1-2.9-17.1-3-2.9-7.7-2.9-17.1-2.9h-220z"/>
+	<g style="opacity: .8">
+		<use id="Versión:" href="#img1" x="10" y="18"/>
+	</g>
+</svg>

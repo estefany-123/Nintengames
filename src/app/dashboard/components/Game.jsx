@@ -50,6 +50,7 @@ export default function Game({ index, id, title, platform, cover, deleteAction }
         >
           {title}
         </span>
+        
       </div>
       <div style={{ marginLeft: "auto", marginRight: "10px", display: "flex", gap: "4px" }}>
         <img onClick={() => redirect("/game/" + id)} src="/images/btn-show.svg" alt="show" />

@@ -19,6 +19,7 @@ export async function GET(request, { params }) {
         title: true,
         cover: true,
         year: true,
+        version: true,
         platform: {
           select: {
             id: true,
@@ -80,6 +81,7 @@ export async function PUT(request, {params}) {
     const platformId = Number(formData.get("platformId"));
     const categoriesId = Number(formData.get("categoriesId"));
     const year = Number(formData.get("year"));
+    const version = formData.get("version")?.toString() || "";
 
     const upgame = await prisma.games.update({
         where:{
@@ -90,6 +92,7 @@ export async function PUT(request, {params}) {
           platformId,
           categoriesId,
           year,
+          version,
           cover: fileName,
         }
     })

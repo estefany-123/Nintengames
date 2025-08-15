@@ -36,6 +36,7 @@ model games {
   year         Int
   category     categories @relation(fields: [categoriesId], references: [id])
   platform     platforms  @relation(fields: [platformId], references: [id])
+  version  String @db.VarChar(32)
 
   @@index([categoriesId], map: "games_categoriesId_fkey")
   @@index([platformId], map: "games_platformId_fkey")

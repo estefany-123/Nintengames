@@ -55,6 +55,7 @@ export default function Game() {
                 <Info image="info-platform.svg" title={game.platform.name} />
                 <Info image="info-category.svg" title={game.category.name} />
                 <Info image="info-year.svg" title={game.year} />
+                <Info image="info-version.svg" title={game.version} />
             </div>
         }
       </div>

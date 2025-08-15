@@ -4,7 +4,7 @@ import verifyToken from './lib/verifyToken';
 export async function middleware(req) {
   const { pathname } = req.nextUrl;
 
-  const publicPaths = ['/api/users/login', '/api/docs'];
+  const publicPaths = ['/api/users/login', '/api/docs', '/api/users','/api/auth/login','/api/platforms','/api/categories','/api/games'];
 
   if (publicPaths.includes(pathname)) {
     return NextResponse.next();

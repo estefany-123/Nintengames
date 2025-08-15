@@ -51,7 +51,7 @@ export default function Dashboard() {
                     scrollbarWidth: 'none'
                 }}>
                     {games?.map((game, index) => (
-                        <Game key={index} index={index} id={game.id} title={game.title} platform={game.platform.name} cover={game.cover} deleteAction={deleteAction} />
+                        <Game key={index} index={index} id={game.id} title={game.title} platform={game.platform.name} cover={game.cover}  deleteAction={deleteAction} />
                     ))}
                 </div>
             </div>
